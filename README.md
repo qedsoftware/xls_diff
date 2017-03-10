@@ -27,17 +27,18 @@ Configure local git repository:
 
 - edit .gitattributes
 
-    *.xls diff=xls
-    *.xlsx diff=xlsx
+		*.xls diff=xls
+		*.xlsx diff=xlsx
 
 - edit .git/config
 
-    [diff "xls"]
-        binary = true
-        textconv = /usr/local/bin/xls2txt
-    [diff "xlsx"]
-        binary = true
-        textconv = /usr/local/bin/xlsx2txt
+    	[diff "xls"]
+        	binary = true
+        	textconv = /usr/local/bin/xls2txt
+
+	    [diff "xlsx"]
+   	     	binary = true
+        	textconv = /usr/local/bin/xlsx2txt
 
 Henceforth git diff should yield readable text outputs on .xls/.xlsx files under version control, rather than only stating that the binary files differ.  For a demonstration, Try modifying the test.xlsx file locally and typing `git diff`.
 
